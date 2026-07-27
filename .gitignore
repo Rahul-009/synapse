@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Environment files — contain API keys and DB credentials, never commit
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+build/
+
+# Uploaded documents (agent service scratch space)
+backend/services/agent/uploads/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
