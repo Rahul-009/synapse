@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://gateway-latest-gq37.onrender.com/",
+        target: "https://gateway-latest-gq37.onrender.com",
         changeOrigin: true,
       },
     },
