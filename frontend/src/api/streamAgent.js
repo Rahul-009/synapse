@@ -10,7 +10,7 @@ export async function streamAgent({
   onToken,
   signal,
 }) {
-  const res = await fetch('/api/agent/run', {
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/api/agent/run`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     credentials: 'include',
