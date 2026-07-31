@@ -1,18 +1,12 @@
-# Run from /backend directory
+# Run from /backend directory if use shared service
 FROM node
 
 WORKDIR /app
 
-COPY packages*.json ./
+COPY package*.json ./
 RUN npm install
 
-COPY ./services/chat/package*.json ./services/chat
-RUN cd services/chat && npm install
-
-COPY services/chat ./services/chat
-COPY shared ./shared
-
-WORKDIR /app/services/chat
+COPY . .
 
 EXPOSE 8002
 

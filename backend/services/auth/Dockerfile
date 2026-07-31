@@ -1,18 +1,12 @@
-# Run from /backend directory
+# Run from /backend directory if use shared service
 FROM node
 
 WORKDIR /app
 
-COPY packages*.json ./
+COPY package*.json ./
 RUN npm install
 
-COPY ./services/auth/package*.json ./services/auth
-RUN cd services/auth && npm install
-
-COPY services/auth ./services/auth
-COPY shared ./shared
-
-WORKDIR /app/services/auth
+COPY . .
 
 EXPOSE 8001
 

@@ -1,18 +1,12 @@
-# Run from /backend directory
+# Run from /backend directory if use shared service
 FROM node
 
 WORKDIR /app
 
-COPY packages*.json ./
+COPY package*.json ./
 RUN npm install
 
-COPY ./gateway/package*.json ./gateway/
-RUN cd gateway && npm install
-
-COPY gateway ./gateway
-COPY shared ./shared
-
-WORKDIR /app/gateway
+COPY . .
 
 EXPOSE 8000
 

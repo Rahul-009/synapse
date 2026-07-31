@@ -1,18 +1,12 @@
-# Run from /backend directory
+# Run from /backend directory if use shared service
 FROM node
 
 WORKDIR /app
 
-COPY packages*.json ./
+COPY package*.json ./
 RUN npm install
 
-COPY ./services/agent/package*.json ./services/agent
-RUN cd services/agent && npm install
-
-COPY services/agent ./services/agent
-COPY shared ./shared
-
-WORKDIR /app/services/agent
+COPY . .
 
 EXPOSE 8003
 
